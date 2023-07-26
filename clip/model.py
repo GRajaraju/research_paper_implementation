@@ -1,6 +1,7 @@
 from transformers import AutoImageProcessor, ResNetForImageClassification
-from transformers import BertTokenizer, BertModel
+from sentence_transformers import SentenceTransformer
 from PIL import Image
+import torch
 
 
 class ImageEncoder:
@@ -18,14 +19,12 @@ class ImageEncoder:
     
 class TextEncoder:
   def __init__(self, model_name):
-
-    self.tokenizer = BertTokenizer.from_pretrained(model_name)
-    self.model = BertModel.from_pretrained(model_name)
+    self.model = SentenceTransformer(model_name)
 
   def features(self, text):
-    inputs = self.tokenizer(text, return_tensors="pt")
-    output = self.model(**inputs)
-    return output.last_hidden_state
+    outputs = self.model.encode(text)
+    outputs = torch.tensor(outputs).view(1, -1)
+    return outputs
 
 
 if __name__ == "__main__":
