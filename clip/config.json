@@ -1,4 +1,4 @@
 {
-    "text_embeddings": "microsoft/resnet-50",
-    "image_embeddings": "all-MiniLM-L6-v2"
+    "image_embeddings": "microsoft/resnet-50",
+    "text_embeddings": "all-MiniLM-L6-v2"
 }
