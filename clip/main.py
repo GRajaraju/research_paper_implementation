@@ -5,7 +5,19 @@ from projectionhead import ProjectionHead
 
 
 class TextImageSimilarity:
+    """
+    Given CLIP is multimodal (vision and language) model, we would need
+    to load both vision and language model.
 
+    For this specific implementation, we are using the following models
+    to compute the embeddings for an image and a text:
+
+    1. Vision: microsoft/resnet-50
+    2. Language: all-MiniLM-L6-v2
+
+    Both the models are loaded and the embeddings for image and the
+    text are computed.
+    """
     def __init__(self, image_model_name, text_model_name):
         
         self.image_encoder = ImageEncoder(image_model_name)
