@@ -1,3 +1,14 @@
+"""
+CLIP is a multi modal (vision and langauge) model that finds the
+similarity between an image and its corresponding text description.
+
+Two models are used within CLIP, one that computes the image embeddings
+and the other that computes for the text.
+
+Embedding size for the image and the text is different, so we are using a
+projection head that resizes the embeddings to same size.
+"""
+
 import torch
 import torch.nn as nn
 
