@@ -1,8 +1,0 @@
-{
-    "image_embeddings": "microsoft/resnet-50",
-    "text_embeddings": "all-MiniLM-L6-v2",
-    "hyperparams": {
-        "epochs": 2,
-        "learning_rate": 0.001
-    }
-}
