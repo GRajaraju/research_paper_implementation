@@ -7,5 +7,6 @@ class Config:
     text_embeddings_model: str = "all-MiniLM-L6-v2"
     epochs: int = 2
     learning_rate: float = 0.001
+    contrastive_loss_margin = 0.5
 
     
